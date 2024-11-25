@@ -17,7 +17,14 @@ cursor = conn.cursor()
                produkts on produkts.produkts_id = Detalas.produkta_id
                )'''
 
-cursor.execute('''INSERT INTO Klients (klienta_id, vards, epasts, telefons) VALUES (?, ?, ?, ? )''', (4, "Jan", "lol@mail.ru", "22222222"))
+
+id=int(input())
+vards = input()
+epasts = input()
+tel = input()
+
+
+cursor.execute('''INSERT INTO Klients (klienta_id, vards, epasts, telefons) VALUES (?, ?, ?, ? )''', (id, vards, epasts, tel))
 
 cursor.execute('''SELECT * FROM Klients''')
 
