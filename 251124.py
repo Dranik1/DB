@@ -28,9 +28,18 @@ conn.execute(INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY)
 
 conn.commit()'''
 
+conn.execute("UPDATE COMPANY set SALARY = 25000.0 where ID = 1")
+conn.commit()
+print("Kopēju izmaiņu skaits: ", conn.total_changes)
+
+
+
 cursor = conn.execute("SELECT * from COMPANY")
 for i in cursor:
-    print(i)
+    print("ID = ", i[0])
+    print("NAME = ", i[1])
+    print("ADDRESS = ", i[3])
+    print("SALARY = ", i[4], "\n")
 
 
 
